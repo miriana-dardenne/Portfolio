@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projets — Miriana Dardenne</title>
+<meta name="description" content="Projets de Miriana Dardenne, étudiante en BTS SIO spécialité réseaux (SISR).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">Miriana-Frances Dardenne--Dugandzic</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="siteNav">
+      <ul>
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="index.html#apropos" class="nav-link">Expériences</a></li>
+        <li><a href="competences.html#competences" class="nav-link">Compétences</a></li>
+        <li><a href="index.html#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="projets.html#projets" class="nav-link">Projets</a></li>
+        <li><a href="veille.html#veille" class="nav-link">Veille</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= PROJETS ================= -->
+<!-- 🔧 À personnaliser : remplace les cartes d'exemple par tes vrais projets dans chaque catégorie -->
+<section id="projets" style="border-top:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Projets</h2>
+    </div>
+    <p class="page-lead">Mes réalisations, classées entre initiatives personnelles et projets menés dans le cadre de ma formation.</p>
+
+    <div class="projects-group">
+      <h3 class="group-title">Projets personnels</h3>
+      <div class="projects-grid">
+        <div class="project-card">
+          <span class="project-meta">À compléter</span>
+          <h3>Ton projet personnel</h3>
+          <p>Décris ici un projet mené de ton côté (script, site, labo réseau, automatisation...).</p>
+          <div class="tag-row">
+            <span class="tag">Personnel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-group">
+      <h3 class="group-title">Projets de formation</h3>
+      <div class="projects-grid">
+        <div class="project-card">
+          <span class="project-meta">BTS SIO 2 SISR · Projet de groupe · 2026</span>
+          <h3>Infrastructure &amp; sécurité réseau virtuel — TechServices (Perpignan – Bordeaux)</h3>
+          <p>Projet réalisé en binôme : conception, déploiement et sécurisation d'une infrastructure réseau virtualisée pour une entreprise fictive répartie sur deux sites. Mise en place d'un domaine Active Directory (DNS, DHCP, GPO), segmentation réseau par VLAN, pare-feu OPNsense, serveur web NGINX en DMZ, serveur Syslog centralisé et interconnexion des sites via VPN IPsec. Déploiement également d'un accès distant OpenVPN. Le projet a été validé par des tests fonctionnels et des audits de sécurité. Outils utilisés : VMware Workstation, Windows Server 2022, OPNsense, NGINX, rsyslog, Trello et Draw.io. Documentation technique complète rédigée.</p>
+          <div class="tag-row" style="margin-bottom:22px;">
+            <span class="tag">Trello</span>
+            <span class="tag">Draw.io</span>
+            <span class="tag">VMware</span>
+            <span class="tag">OPNsense</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">Squid</span>
+            <span class="tag">IPsec / OpenVPN</span>
+            <span class="tag">NGINX</span>
+            <span class="tag">Syslog</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a href="Compte_rendu_projet_Miriana-Lucca-Cioli.pdf" class="btn btn-primary" target="_blank" rel="noopener">Lire le compte rendu</a>
+            <a href="Compte_rendu_projet_Miriana-Lucca-Cioli.pdf" class="btn btn-ghost" download>Télécharger (PDF)</a>
+            <a href="Sujet_projet_TechServices.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Voir le sujet</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Miriana Dardenne</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
