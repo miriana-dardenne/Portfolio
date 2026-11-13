@@ -114,25 +114,53 @@ if (stackViewport){
   update();
 }
 
-// Onglet OpenClassrooms : ouvre / ferme le classeur de certifications
-const ocCard = document.getElementById('ocCard');
-if (ocCard){
-  const ocPanel = document.getElementById('ocPanel');
-  const ocToggle = document.getElementById('ocToggle');
-  const ocLogo = document.getElementById('ocLogo');
-  const ocLabel = ocToggle.querySelector('.oc-toggle-label');
+// Classeurs de certifications (OpenClassrooms, Cisco) : ouvre / ferme, un seul ouvert à la fois
+const binders = [];
+document.querySelectorAll('.oc-card[data-panel]').forEach(card => {
+  const panel = document.getElementById(card.dataset.panel);
+  const toggleBtn = card.querySelector('.oc-toggle');
+  const logo = card.querySelector('.oc-logo');
+  if (!panel || !toggleBtn || !logo) return;
+  const label = toggleBtn.querySelector('.oc-toggle-label');
   const setOpen = (open) => {
-    ocCard.classList.toggle('open', open);
-    ocPanel.classList.toggle('open', open);
-    ocPanel.setAttribute('aria-hidden', String(!open));
-    ocToggle.setAttribute('aria-expanded', String(open));
-    ocLogo.setAttribute('aria-expanded', String(open));
-    ocLabel.textContent = open ? 'Fermer le classeur' : 'Ouvrir le classeur';
+    card.classList.toggle('open', open);
+    panel.classList.toggle('open', open);
+    panel.setAttribute('aria-hidden', String(!open));
+    toggleBtn.setAttribute('aria-expanded', String(open));
+    logo.setAttribute('aria-expanded', String(open));
+    label.textContent = open ? 'Fermer le classeur' : 'Ouvrir le classeur';
   };
-  const toggle = () => setOpen(!ocCard.classList.contains('open'));
-  ocToggle.addEventListener('click', toggle);
-  ocLogo.addEventListener('click', toggle);
-  ocLogo.addEventListener('keydown', (e) => {
+  binders.push({ card, setOpen });
+  const toggle = () => {
+    const willOpen = !card.classList.contains('open');
+    if (willOpen) binders.forEach(b => { if (b.card !== card) b.setOpen(false); });
+    setOpen(willOpen);
+  };
+  toggleBtn.addEventListener('click', toggle);
+  logo.addEventListener('click', toggle);
+  logo.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
   });
+});
+
+// Veille : onglets cliquables (un clic ouvre le dossier, un second clic le referme)
+const topicTabs = document.querySelectorAll('.topic-tab');
+if (topicTabs.length){
+  const topicPanels = document.querySelectorAll('.topic-panel');
+  const showTopic = (id, scroll) => {
+    topicTabs.forEach(t => {
+      const on = t.dataset.target === id;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', String(on));
+    });
+    topicPanels.forEach(p => { p.hidden = p.id !== id; });
+    if (id && scroll){
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+  topicTabs.forEach(t => t.addEventListener('click', () => {
+    showTopic(t.classList.contains('active') ? '' : t.dataset.target, true);
+  }));
+  const fromHash = location.hash && document.querySelector('.topic-panel' + location.hash);
+  if (fromHash) showTopic(location.hash.slice(1), true);
 }

@@ -36,10 +36,12 @@
 <!-- 🔧 À personnaliser : remplace par les sujets/sources que tu suis vraiment (dossier de veille BTS SIO) -->
 <section id="veille" style="border-top:none;">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Veille</h2>
+    <div class="section-head veille-title">
+      <span class="veille-kicker">BTS SIO · option SISR</span>
+      <h2>Veille <em>informatique</em></h2>
+      <span class="veille-rule" aria-hidden="true"></span>
     </div>
-    <p class="page-lead">Se tenir informé fait partie du métier, surtout en cybersécurité où les menaces et les référentiels évoluent vite. Voici pourquoi je fais de la veille, avec quels outils et selon quelle méthode.</p>
+    <p class="page-lead">La veille informatique est un <mark class="hl">élément essentiel dans mon cœur de métier</mark>. J'en réalise régulièrement sur différents sujets afin de me tenir informé des dernières évolutions technologiques, des nouvelles pratiques et des innovations du secteur. Elle me permet <mark class="hl">d'actualiser mes connaissances</mark> en continu et de constamment <mark class="hl">améliorer mes compétences professionnelles</mark>.</p>
 
     <!-- ===== Pourquoi faire une veille ? ===== -->
     <div class="veille-section veille-why">
@@ -94,9 +96,9 @@
         <p class="dossier-intro" style="margin-bottom:28px;">Pour ne pas me disperser, j'ai créé une adresse mail uniquement pour ma veille : <strong>veille.1nfo21</strong>. Tout ce qui concerne la veille arrive là, et nulle part ailleurs.</p>
         <ol class="veille-steps">
           <li><strong>Créer un mail dédié</strong><span>Une adresse à part, utilisée uniquement pour s'abonner aux newsletters et aux sources de veille.</span></li>
-          <li><strong>Définir un jour fixe</strong><span>Je réserve un jour précis dans la semaine pour traiter ma veille, sans la laisser s'accumuler.</span></li>
+          <li><strong>Définir un jour fixe</strong><span>Je réserve un jour précis dans la semaine pour traiter ma veille, sans la laisser s'accumuler.</span><a href="emploi_du_temps_veille.pdf" target="_blank" rel="noopener" class="btn btn-primary">Voir mon emploi du temps</a></li>
           <li><strong>Trier les mails</strong><span>Je parcours la boîte, je garde les articles intéressants et je supprime le reste.</span></li>
-          <li><strong>Créer des notes</strong><span>Je note l'essentiel de ce que je retiens pour pouvoir le retrouver et le réutiliser.</span><a href="tableau_veille_wifi7.pdf" target="_blank" rel="noopener" class="btn btn-primary">Voir mes notes</a></li>
+          <li><strong>Créer des notes</strong><span>Je note l'essentiel de ce que je retiens pour pouvoir le retrouver et le réutiliser.</span><a href="tableau_veille_wifi7.pdf" target="_blank" rel="noopener" class="btn btn-primary">Voir mes notes Wi-Fi 7</a><a href="tableau_veille_nis2.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:10px;">Voir mes notes NIS2</a><a href="tableau_veille_virtualisation.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:10px;">Voir mes notes Virtualisation</a></li>
         </ol>
         <div class="veille-benefits">
           <h4>Les avantages</h4>
@@ -109,11 +111,30 @@
       </div>
     </div>
 
+    <!-- ===== Mes dossiers de veille (3 onglets cliquables) ===== -->
+    <!-- 🔧 Pour ajouter une veille : remplace « Bientôt » par le nom du sujet et remplis le panneau correspondant (topic2 / topic3) -->
+    <div class="veille-section">
+      <h3 class="veille-h">Mes dossiers de veille</h3>
+      <div class="topic-tabs" role="tablist">
+        <button class="topic-tab" type="button" role="tab" aria-selected="false" aria-controls="wifi7" data-target="wifi7">
+          <span class="topic-kicker">Réseau</span>
+          <span class="topic-name">Wi-Fi 7</span>
+        </button>
+        <button class="topic-tab" type="button" role="tab" aria-selected="false" aria-controls="topic2" data-target="topic2">
+          <span class="topic-kicker">Cybersécurité</span>
+          <span class="topic-name">Directive NIS2</span>
+        </button>
+        <button class="topic-tab" type="button" role="tab" aria-selected="false" aria-controls="topic3" data-target="topic3">
+          <span class="topic-kicker">Systèmes et infrastructure</span>
+          <span class="topic-name">Virtualisation</span>
+        </button>
+      </div>
+    </div>
+
     <!-- ===== Dossier de veille : Wi-Fi 7 ===== -->
-    <article class="veille-dossier" id="wifi7">
-      <span class="dossier-kicker">Dossier de veille technologique</span>
+    <article class="veille-dossier topic-panel" id="wifi7" hidden>
       <h2>Wi-Fi 7 (IEEE 802.11be)</h2>
-      <p class="dossier-intro">Le Wi-Fi 7, aussi appelé <em>Extremely High Throughput</em> (EHT), succède au Wi-Fi 6 et 6E. Il vise plus de débit, mais surtout moins de latence et une meilleure fiabilité. Voici ce que je retiens, avec un angle « administrateur réseau » et un point sur la situation en France.</p>
+      <p class="dossier-intro">Le Wi-Fi 7, aussi appelé <em>Extremely High Throughput</em> (EHT), succède au Wi-Fi 6 et 6E. Il vise plus de débit, mais surtout moins de latence et une meilleure fiabilité.</p>
 
       <div class="wifi-stats">
         <div class="wifi-stat"><strong>320 MHz</strong><span>largeur de canal max., contre 160 MHz en Wi-Fi 6</span></div>
@@ -193,14 +214,149 @@
         <p class="dossier-intro" style="margin-bottom:0;">Le prochain standard ne cherche pas à battre des records de débit : il garde les mêmes largeurs de canal et la même modulation que le Wi-Fi 7. Son objectif est la fiabilité (« Ultra High Reliability »), avec notamment la coordination entre points d'accès voisins. Les cibles visées par rapport au Wi-Fi 7 : +25 % de débit MAC, −25 % de latence et −25 % de paquets perdus. Le standard est encore en cours de rédaction.</p>
       </div>
     </article>
+
+    <!-- ===== Veilles à venir ===== -->
+    <article class="veille-dossier topic-panel" id="topic2" hidden>
+      <span class="dossier-kicker">Cybersécurité</span>
+      <h2>Directive NIS 2 (UE) 2022/2555</h2>
+      <p class="dossier-intro">NIS 2 renforce la cybersécurité en Europe en élargissant fortement le nombre d'entités concernées (« essentielles » et « importantes »). La directive est publiée depuis fin 2022, mais en France, la loi de transposition (projet de loi « Résilience ») n'est toujours pas adoptée.</p>
+
+      <div class="wifi-stats">
+        <div class="wifi-stat"><strong>17/10/2024</strong><span>date limite de transposition fixée par l'UE</span></div>
+        <div class="wifi-stat"><strong>≈ 15 000</strong><span>entités concernées en France, dans 18 secteurs</span></div>
+        <div class="wifi-stat"><strong>10 M€ / 2 %</strong><span>amende maximale, ou 2 % du chiffre d'affaires mondial</span></div>
+        <div class="wifi-stat"><strong>08/07/2026</strong><span>la Commission saisit la Cour de justice de l'UE contre la France</span></div>
+      </div>
+
+      <div class="dossier-block">
+        <h3>Ce que j'ai retenu</h3>
+        <div class="wifi-feat-grid">
+          <div class="wifi-feat">
+            <h4>Un périmètre élargi</h4>
+            <p>NIS 2 s'appuie sur NIS 1 mais touche beaucoup plus d'organisations. Elle donne aussi un cadre au réseau européen de gestion de crise CyCLONe.</p>
+          </div>
+          <div class="wifi-feat">
+            <h4>Une transposition en retard</h4>
+            <p>Le projet de loi Résilience, qui transpose aussi REC et le volet DORA, est déposé au Sénat en octobre 2024, adopté par le Sénat en mars 2025, puis voté en commission à l'Assemblée en septembre 2025. Il attend ensuite plus d'un an une inscription en séance.</p>
+          </div>
+          <div class="wifi-feat">
+            <h4>Un contentieux européen</h4>
+            <p>Mise en demeure en novembre 2024, puis renvoi devant la Cour de justice de l'UE en juillet 2026. La Cour peut imposer des sanctions financières à la France.</p>
+          </div>
+          <div class="wifi-feat">
+            <h4>Le référentiel ReCyF de l'ANSSI</h4>
+            <p>Publié en mars 2026, il liste les mesures recommandées pour atteindre les objectifs de sécurité de NIS 2. Non obligatoire par défaut, il permettra aux futures entités de s'en prévaloir en cas de contrôle.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dossier-block">
+        <h3>Où en est-on ?</h3>
+        <ul class="dossier-takeaways">
+          <li>Le texte devait être examiné à l'Assemblée à partir du 7 octobre 2026, mais il a été retiré de l'ordre du jour le 6 octobre, sans nouvelle date.</li>
+          <li>Raisons : un agenda surchargé et surtout un désaccord sur l'article 16 bis (chiffrement des messageries).</li>
+          <li>Sans loi promulguée, aucune obligation légale n'existe encore en France.</li>
+          <li>Au niveau européen, la Commission a proposé en janvier 2026 des modifications ciblées pour simplifier NIS 2 et créer une catégorie de petites capitalisations.</li>
+        </ul>
+      </div>
+
+      <div class="dossier-block">
+        <h3>Chronologie de mes notes</h3>
+        <div class="table-scroll"><table class="wifi-table"><thead><tr><th>Date</th><th>Information</th><th>Source</th><th>Thème</th></tr></thead><tbody>
+<tr><td>27/12/2022</td><td>Publication de la directive NIS 2 (UE) 2022/2555 au Journal officiel de l’UE</td><td><a href="https://cyber.gouv.fr/reglementation/cybersecurite-systemes-dinformation/directives-nis-nis2-et-dispositif-saiv/directive-nis-2/" target="_blank" rel="noopener">ANSSI (cyber.gouv.fr)</a></td><td>Directive européenne</td></tr>
+<tr><td>15/10/2024</td><td>Dépôt du projet de loi « Résilience » au Sénat, deux jours avant l’échéance européenne</td><td><a href="https://www.clubic.com/actualite-632920-la-loi-nis2-encore-reportee-nouveau-camouflet-pour-la-cybersecurite-en-france.html" target="_blank" rel="noopener">Clubic</a></td><td>Transposition en France</td></tr>
+<tr><td>28/11/2024</td><td>Mise en demeure de la Commission européenne envoyée à la France</td><td><a href="https://aocsi.fr/blog/loi-resilience-transposition-nis2" target="_blank" rel="noopener">AOCSI (suivi de la loi Résilience)</a></td><td>Contentieux UE</td></tr>
+<tr><td>12/03/2025</td><td>Le Sénat adopte en première lecture le projet de loi Résilience</td><td><a href="https://www.clubic.com/actualite-556923-le-senat-adopte-le-projet-de-loi-qui-va-faire-passer-la-cybersecurite-francaise-a-la-vitesse-superieure.html" target="_blank" rel="noopener">Clubic</a></td><td>Transposition en France</td></tr>
+<tr><td>10/09/2025</td><td>La commission spéciale de l’Assemblée adopte le projet de loi à l’unanimité</td><td><a href="https://questions.assemblee-nationale.fr/q17/17-623QOSD.htm" target="_blank" rel="noopener">Assemblée nationale (question orale n° 623)</a></td><td>Transposition en France</td></tr>
+<tr><td>20/01/2026</td><td>La Commission européenne propose des modifications ciblées de NIS 2</td><td><a href="https://oeil.europarl.europa.eu/oeil/fr/procedure-document-summary/pdf?id=1884097" target="_blank" rel="noopener">Parlement européen (Legislative Observatory, 2026/0012(COD))</a></td><td>Évolution du texte (UE)</td></tr>
+<tr><td>04/02/2026</td><td>Des parlementaires accusent l’Intérieur de freiner l’adoption de la loi</td><td><a href="https://acteurspublics.fr/articles/comment-linterieur-tente-de-faire-freiner-la-transposition-de-la-loi-resilience-et-cybersecurite/" target="_blank" rel="noopener">Acteurs Publics</a></td><td>Retards / calendrier</td></tr>
+<tr><td>17/03/2026</td><td>L’ANSSI publie le Référentiel Cyber France (ReCyF)</td><td><a href="https://cyber.gouv.fr/actualites/nis-2-lanssi-poursuit-et-renforce-sa-dynamique-daccompagnement/" target="_blank" rel="noopener">ANSSI (cyber.gouv.fr)</a></td><td>Référentiel ANSSI</td></tr>
+<tr><td>18/03/2026</td><td>La CSNP demande l’examen rapide du projet de loi de résilience</td><td><a href="https://www.banquedesterritoires.fr/cybersecurite-la-csnp-presse-le-parlement-dexaminer-sans-delai-le-projet-de-loi-de-resilience" target="_blank" rel="noopener">Banque des Territoires</a></td><td>Retards / calendrier</td></tr>
+<tr><td>10/06/2026</td><td>Alerte sur le coût possible du retard de transposition</td><td><a href="https://www.banquedesterritoires.fr/retards-dans-la-transposition-de-nis2-la-france-bientot-sanctionnee" target="_blank" rel="noopener">Banque des Territoires</a></td><td>Contentieux UE</td></tr>
+<tr><td>08/07/2026</td><td>La Commission européenne saisit la Cour de justice de l’UE contre la France</td><td><a href="https://digital-strategy.ec.europa.eu/de/news/commission-refers-ireland-spain-france-and-netherlands-court-justice-failing-transpose-rules" target="_blank" rel="noopener">Commission européenne (Digital Strategy)</a></td><td>Contentieux UE</td></tr>
+<tr><td>23/09/2026</td><td>Le projet de loi est enfin inscrit à l’ordre du jour de l’Assemblée nationale</td><td><a href="https://next.ink/brief-article/alleluia-la-transposition-de-nis2-est-enfin-a-lordre-du-jour-de-lassemblee-nationale/" target="_blank" rel="noopener">Next</a></td><td>Retards / calendrier</td></tr>
+<tr><td>06/10/2026</td><td>L’examen du projet de loi Résilience est de nouveau reporté, sans nouvelle date</td><td><a href="https://www.clubic.com/actualite-632920-la-loi-nis2-encore-reportee-nouveau-camouflet-pour-la-cybersecurite-en-france.html" target="_blank" rel="noopener">Clubic</a></td><td>Retards / calendrier</td></tr>
+</tbody></table></div>
+        <p class="table-note">Classées de la moins récente à la plus récente. Chaque source renvoie à l'article d'origine.</p>
+      </div>
+
+      <p class="dossier-date">Dernière mise à jour : 05/11/2026</p>
+      <p><a href="tableau_veille_nis2.pdf" target="_blank" rel="noopener" class="btn btn-primary">Voir mes notes NIS2</a></p>
+    </article>
+    <article class="veille-dossier topic-panel" id="topic3" hidden>
+      <span class="dossier-kicker">Systèmes et infrastructure</span>
+      <h2>Virtualisation : VMware après le rachat par Broadcom</h2>
+      <p class="dossier-intro">Depuis le rachat de VMware par Broadcom (novembre 2023), le modèle de licences a changé en profondeur. Cela pousse de nombreuses entreprises à envisager des alternatives, notamment open source comme Proxmox VE. Mon suivi couvre les licences, le droit de la concurrence, la sécurité et le marché.</p>
+
+      <div class="wifi-stats">
+        <div class="wifi-stat"><strong>16 cœurs</strong><span>minimum facturé par processeur depuis le changement de licences</span></div>
+        <div class="wifi-stat"><strong>160 → 2</strong><span>produits au catalogue, réduits aux offres VVF et VCF</span></div>
+        <div class="wifi-stat"><strong>55 %</strong><span>des utilisateurs VMware feront des essais d'alternatives d'ici 2029 (Gartner)</span></div>
+        <div class="wifi-stat"><strong>Proxmox VE 9.2</strong><span>disponible depuis le 21/05/2026</span></div>
+      </div>
+
+      <div class="dossier-block">
+        <h3>Les grands axes de ma veille</h3>
+        <div class="wifi-feat-grid">
+          <div class="wifi-feat">
+            <h4>Licences et Broadcom</h4>
+            <p>Fin des licences perpétuelles à la vente, minimum de 16 cœurs par socket, fin de vente de vSphere Standard (juillet 2025), retrait de vSphere Foundation dans plusieurs pays d'EMEA et programme VCSP réservé aux invités.</p>
+          </div>
+          <div class="wifi-feat">
+            <h4>Droit et concurrence</h4>
+            <p>Le CISPE a déposé une plainte auprès de la DG Concurrence (mars 2026), puis cinq organisations ont réclamé une transition de trois ans (juillet 2026). Le Tribunal de l'UE a refusé à Broadcom les noms des fournisseurs soutenant le recours (novembre 2026).</p>
+          </div>
+          <div class="wifi-feat">
+            <h4>Sécurité</h4>
+            <p>Cinq failles corrigées en juillet 2026 (VMSA-2026-0006), dont une évasion de VM critique via VMXNET3 (CVSS 9.3). Une faille de vCenter est ensuite ajoutée au catalogue des failles exploitées de la CISA.</p>
+          </div>
+          <div class="wifi-feat">
+            <h4>Alternatives et marché</h4>
+            <p>Proxmox VE 9.2 (Debian 13.5, noyau Linux 7.0, Ceph Tentacle), projet de Tesco de passer à Proxmox dans ses magasins, et concurrents (Nutanix, Red Hat, HPE, Mirantis) qui financent la migration contre trois ans d'engagement.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dossier-block">
+        <h3>La dernière actualité</h3>
+        <ul class="dossier-takeaways">
+          <li>Le 04/11/2026, VMware lance « vSphere Express », une offre d'entrée de gamme jusqu'à 128 cœurs, avec vMotion, redémarrage automatique des VM et distributed switch.</li>
+          <li>Elle fait suite à l'aveu, lors de VMware Explore, que l'accent mis sur VCF avait été trop fort.</li>
+          <li>Le prix n'est pas communiqué : la licence par cœur est annoncée « nettement moins chère » que VVF ou VCF.</li>
+          <li>Les prévisions de Gartner sont des évaluations (preuves de concept), pas des migrations garanties. Broadcom reste classé « Leader » de son Magic Quadrant.</li>
+        </ul>
+      </div>
+
+      <div class="dossier-block">
+        <h3>Chronologie de mes notes</h3>
+        <div class="table-scroll"><table class="wifi-table"><thead><tr><th>Date</th><th>Information</th><th>Source</th><th>Thème</th></tr></thead><tbody>
+<tr><td>22/11/2023</td><td>Broadcom finalise le rachat de VMware et change le modèle de licences</td><td><a href="https://www.stackscale.com/blog/vmware-licensing-2026/" target="_blank" rel="noopener">Stackscale</a></td><td>Licences / Broadcom</td></tr>
+<tr><td>28/03/2025</td><td>Broadcom annonce puis retire un minimum de 72 cœurs par ligne de commande</td><td><a href="https://www.stackscale.com/blog/vmware-licensing-2026/" target="_blank" rel="noopener">Stackscale</a></td><td>Licences / Broadcom</td></tr>
+<tr><td>31/07/2025</td><td>vSphere Standard atteint sa fin de vente</td><td><a href="https://www.stackscale.com/blog/vmware-licensing-2026/" target="_blank" rel="noopener">Stackscale</a></td><td>Licences / Broadcom</td></tr>
+<tr><td>12/2025</td><td>Broadcom retire vSphere Foundation de plusieurs pays d’EMEA</td><td><a href="https://www.stackscale.com/blog/vmware-licensing-2026/" target="_blank" rel="noopener">Stackscale</a></td><td>Licences / Broadcom</td></tr>
+<tr><td>01/2026</td><td>Broadcom met fin au programme VCSP et passe à un modèle sur invitation</td><td><a href="https://www.hsc.com/resources/blog/vmware-alternatives-in-2026-a-migration-guide/" target="_blank" rel="noopener">Hughes Systique</a></td><td>Licences / Broadcom</td></tr>
+<tr><td>23/03/2026</td><td>Le CISPE dépose une plainte auprès de la DG Concurrence de l’UE</td><td><a href="https://next.ink/brief-article/vmware-nouvelle-plainte-contre-broadcom-le-cispe-demande-des-actions-immediates/" target="_blank" rel="noopener">Next</a></td><td>Droit / Concurrence</td></tr>
+<tr><td>05/05/2026</td><td>Broadcom annonce VMware Cloud Foundation 9.1</td><td><a href="https://vinfrastructure.it/2026/05/broadcom-announces-the-ga-of-vmware-cloud-foundation-9-1/" target="_blank" rel="noopener">vInfrastructure.it</a></td><td>Produits VMware</td></tr>
+<tr><td>21/05/2026</td><td>Proxmox VE 9.2 est disponible</td><td><a href="https://www.proxmox.com/en/news/press-releases/proxmox-virtual-environment-9-2" target="_blank" rel="noopener">Proxmox Server Solutions</a></td><td>Alternatives open source</td></tr>
+<tr><td>10/07/2026</td><td>Lettre commune du CISPE, du Cigref, de Beltug, de Voice et de CIO Platform Nederland</td><td><a href="https://www.channelnews.fr/le-cispe-elargit-son-front-contre-broadcom-et-reclame-trois-ans-de-transition-158076" target="_blank" rel="noopener">ChannelNews</a></td><td>Droit / Concurrence</td></tr>
+<tr><td>29/07/2026</td><td>Broadcom corrige cinq failles VMware (VMSA-2026-0006), dont une évasion de VM critique</td><td><a href="https://www.it-connect.fr/vmware-3-failles-critiques-vcenter-esx-juillet-2026/" target="_blank" rel="noopener">IT-Connect</a></td><td>Sécurité</td></tr>
+<tr><td>18/08/2026</td><td>La CISA ajoute la faille CVE-2026-59310 de vCenter à son catalogue des failles exploitées</td><td><a href="https://www.channelnews.fr/vmware-vcenter-une-faille-critique-deja-exploitee-dans-des-attaques-158417" target="_blank" rel="noopener">ChannelNews</a></td><td>Sécurité</td></tr>
+<tr><td>02/09/2026</td><td>VMware promet le retour d’une offre d’entrée de gamme (vSphere Standard)</td><td><a href="https://www.theregister.com/virtualization/2026/09/02/vmware-swings-its-focus-back-to-low-end-server-virt-promises-vsphere-standard-upgrade/5294083" target="_blank" rel="noopener">The Register</a></td><td>Produits VMware</td></tr>
+<tr><td>22/09/2026</td><td>Gartner : 55 % des entreprises utilisatrices de VMware lanceront des essais d’alternatives d’ici 2029</td><td><a href="https://www.theregister.com/virtualization/2026/09/22/gartner-predicts-55-of-enterprise-vmware-users-will-be-investigating-an-exit-by-2029/5298043" target="_blank" rel="noopener">The Register (d’après Gartner)</a></td><td>Marché / Tendances</td></tr>
+<tr><td>26/10/2026</td><td>Tesco prévoit de remplacer VMware par Proxmox dans ses magasins</td><td><a href="https://www.theregister.com/virtualization/2026/10/26/tesco-replacing-vmware-with-proxmox-in-its-stores-and-on-the-edge/5305281" target="_blank" rel="noopener">The Register</a></td><td>Alternatives open source</td></tr>
+<tr><td>29/10/2026</td><td>Sortie de VMware : des concurrents financent la migration contre trois ans d’engagement</td><td><a href="https://itsocial.fr/cloud-infrastructure-it/cloud-infrastructure-it-articles/sortie-de-vmware-les-concurrents-de-broadcom-paient-la-migration-contre-trois-ans-dengagement/" target="_blank" rel="noopener">IT Social</a></td><td>Marché / Tendances</td></tr>
+<tr><td>03/11/2026</td><td>Le Tribunal de l’UE refuse à Broadcom les noms des fournisseurs cloud soutenant le recours du CISPE</td><td><a href="https://www.elespanol.com/invertia/disruptores/grandes-actores/tecnologicas/20261103/justicia-europea-denuncia-conducta-hostil-broadcom-sempiterno-litigio-compra-vmware/1003744444082_0.html" target="_blank" rel="noopener">El Español</a></td><td>Droit / Concurrence</td></tr>
+<tr><td>04/11/2026</td><td>VMware lance « vSphere Express », une offre d’entrée de gamme</td><td><a href="https://www.theregister.com/virtualization/2026/11/04/vmware-returns-to-low-end-server-virtualization-with-vsphere-express/5307466" target="_blank" rel="noopener">The Register</a></td><td>Produits VMware</td></tr>
+</tbody></table></div>
+        <p class="table-note">Classées de la moins récente à la plus récente. Chaque source renvoie à l'article d'origine.</p>
+      </div>
+
+      <p class="dossier-date">Dernière mise à jour : 05/11/2026</p>
+      <p><a href="tableau_veille_virtualisation.pdf" target="_blank" rel="noopener" class="btn btn-primary">Voir mes notes Virtualisation</a></p>
+    </article>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <span>© 2026 Miriana Dardenne</span>
-  </div>
-</footer>
 
 <script src="script.js"></script>
 </body>

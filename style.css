@@ -1354,9 +1354,42 @@ body:has(#competences) header .wrap{ max-width:1400px; }
   font-family:'Fraunces', serif; font-style:italic; font-size:2.4rem; line-height:1; color:var(--bordeaux-light);
 }
 
-/* Veille — titre centré, même style sobre que les autres pages */
-#veille .section-head{ justify-content:center; margin-bottom:40px; }
-#veille .section-head h2{ font-size:2.1rem; text-align:center; }
+/* Veille — grand titre rose, centré, avec petit texte en dessous */
+#veille{ padding-top:120px; }
+@media (max-width:900px){ #veille{ padding-top:100px; } }
+#veille .section-head{ justify-content:center; margin-bottom:22px; }
+#veille .section-head h2{
+  font-size:clamp(3.2rem, 8vw, 5rem); line-height:1.05; text-align:center;
+  color:var(--bordeaux-light);
+}
+#veille .page-lead{ margin-left:auto; margin-right:auto; text-align:center; }
+
+/* Veille — onglets cliquables (un par dossier de veille) */
+.topic-tabs{ display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+.topic-tab{
+  display:flex; flex-direction:column; align-items:flex-start; gap:6px; text-align:left;
+  padding:20px 22px; cursor:pointer; font:inherit; color:var(--beige-dim);
+  background:var(--bordeaux-panel); border:1px solid var(--line-strong); border-radius:var(--radius);
+  transition:border-color .2s, background .2s, transform .2s;
+}
+.topic-tab:hover{ border-color:var(--bordeaux-light); transform:translateY(-2px); }
+.topic-tab.active{ background:var(--bordeaux); border-color:var(--bordeaux-light); color:var(--beige); }
+.topic-tab:focus-visible{ outline:2px solid var(--beige); outline-offset:3px; }
+.topic-kicker{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--bordeaux-light); }
+.topic-tab.active .topic-kicker{ color:var(--beige-dim); }
+.topic-name{ font-family:'Fraunces', serif; font-size:1.5rem; font-weight:500; color:var(--beige); }
+.topic-panel{ scroll-margin-top:100px; }
+.topic-panel[hidden]{ display:none; }
+.topic-panel.veille-dossier{ margin-top:36px; padding-top:40px; }
+.topic-soon{
+  margin-top:36px; padding:48px 24px; text-align:center;
+  border:1px dashed var(--line-strong); border-radius:var(--radius);
+}
+.topic-soon h3{ font-size:1.4rem; margin-bottom:8px; }
+.topic-soon p{ margin:0; color:var(--beige-muted); }
+@media (max-width:700px){
+  .topic-tabs{ grid-template-columns:1fr; }
+}
 
 /* Contact — titre centré, panneau moins épais, sans la localisation */
 #contact .section-head{ justify-content:center; }
@@ -1378,3 +1411,90 @@ body:has(#competences) header .wrap{ max-width:1400px; }
   .oc-panel{ margin-top:-40px; }
   .oc-panel.open{ margin-top:-4px; }
 }
+
+
+/* ===== Veille — titre amélioré + surlignage ===== */
+#veille .section-head.veille-title{
+  flex-direction:column; align-items:center; gap:14px; margin-bottom:30px;
+}
+.veille-kicker{
+  font-family:'Work Sans', sans-serif; font-size:.78rem; font-weight:500;
+  letter-spacing:.32em; text-transform:uppercase; color:var(--beige-muted);
+}
+#veille .section-head.veille-title h2{
+  font-size:clamp(2.8rem, 7.5vw, 4.8rem); line-height:1.05; margin:0;
+}
+#veille .section-head.veille-title h2 em{
+  font-style:italic; font-weight:400; color:var(--beige);
+}
+.veille-rule{
+  display:block; width:90px; height:2px; margin-top:6px;
+  background:linear-gradient(90deg, transparent, var(--bordeaux-light), transparent);
+}
+
+/* Surlignage des éléments importants du texte */
+mark.hl{
+  background:var(--bordeaux); color:var(--beige);
+  padding:2px 5px; border-radius:2px;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+}
+
+/* ===== Projets — titres de groupes dans le style de la page Veille ===== */
+h3.group-title{
+  font-family:'Fraunces', serif; font-weight:400; font-size:clamp(1.9rem, 4vw, 2.6rem);
+  line-height:1.1; color:var(--bordeaux-light);
+  margin:0 0 20px; padding:0;
+}
+h3.group-title em{ font-style:italic; font-weight:400; color:var(--beige); }
+h3.group-title::after{
+  content:''; display:block; width:80px; height:2px; margin-top:14px;
+  background:linear-gradient(90deg, var(--bordeaux-light), transparent);
+}
+
+/* Mots-clés en gras rose dans les descriptions de projets */
+.project-card p strong.kw{ color:var(--bordeaux-light); font-weight:600; }
+
+/* Libellé « Outils utilisés : » au-dessus des étiquettes */
+.tools-label{
+  display:block; margin-bottom:10px; font-size:.78rem; font-weight:500;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--beige-muted);
+}
+
+/* Projet en cours + schéma réseau dépliable */
+.status-wip{ font-style:italic; color:var(--beige); }
+.infra-details summary{ list-style:none; display:inline-block; cursor:pointer; }
+.infra-details summary::-webkit-details-marker{ display:none; }
+.infra-details[open] summary{ margin-bottom:18px; }
+.infra-details img{ display:block; width:100%; height:auto; border:1px solid rgba(239,228,208,.18); background:#fff; }
+
+/* ===== Contact : carte sous le panneau, alignée à gauche ===== */
+.contact-layout{ display:flex; flex-direction:column; align-items:stretch; gap:22px; }
+.contact-map{
+  position:relative; width:100%; height:300px; overflow:hidden;
+  border:1px solid var(--line-strong); border-radius:6px; background:var(--bg-panel);
+}
+.contact-map iframe{ display:block; width:100%; height:100%; border:0; filter:grayscale(.3) contrast(.95); }
+.contact-map-tag{
+  position:absolute; left:14px; bottom:14px; padding:6px 14px;
+  background:rgba(21,10,12,.88); border:1px solid var(--line-strong); border-radius:2px;
+  color:var(--beige); font-size:.8rem; letter-spacing:.14em; text-transform:uppercase;
+}
+@media (max-width:720px){ .contact-map{ height:240px; } }
+
+/* Note de pied de page */
+.footer-note{ max-width:820px; margin:0 auto; text-align:center; font-size:.85rem; line-height:1.6; color:var(--beige-muted); }
+
+/* ===== Tableau de synthèse E5 ===== */
+.e5-table{ min-width:760px; }
+.e5-table thead th{ text-align:center; font-size:.78rem; vertical-align:bottom; }
+.e5-table thead th:first-child, .e5-table tbody th[scope="row"]{ text-align:left; }
+.e5-table tbody th[scope="row"]{ font-weight:500; color:var(--beige); }
+.e5-table tbody th[scope="row"] a{ color:var(--beige); border-bottom:1px solid var(--bordeaux-light); text-decoration:none; }
+.e5-table tbody th[scope="row"] a:hover{ color:var(--bordeaux-light); }
+.e5-sub{ display:block; font-size:.8rem; font-weight:400; color:var(--beige-muted); }
+.e5-table td{ text-align:center; }
+.e5-x{ color:var(--bordeaux-light); font-weight:700; }
+.e5-table tr.e5-sep th{ text-align:center; background:rgba(110,36,48,.28); color:var(--beige); font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; }
+.e5-dl{ margin-top:18px; }
+html{ scroll-behavior:smooth; }
+#projets .project-card{ scroll-margin-top:90px; }

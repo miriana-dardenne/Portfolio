@@ -39,46 +39,145 @@
     <div class="section-head">
       <h2>Projets</h2>
     </div>
-    <p class="page-lead">Mes réalisations, classées entre initiatives personnelles et projets menés dans le cadre de ma formation.</p>
+    <p class="page-lead">Cette section présente plusieurs <mark class="hl">projets que j’ai réalisés</mark> dans différents contextes. Ils illustrent les <mark class="hl">compétences techniques et méthodologiques</mark> que j’ai pu acquérir et mettre en œuvre.</p>
 
     <div class="projects-group">
-      <h3 class="group-title">Projets personnels</h3>
-      <div class="projects-grid">
-        <div class="project-card">
-          <span class="project-meta">À compléter</span>
-          <h3>Ton projet personnel</h3>
-          <p>Décris ici un projet mené de ton côté (script, site, labo réseau, automatisation...).</p>
-          <div class="tag-row">
-            <span class="tag">Personnel</span>
+      <h3 class="group-title">Projets <em>de formation</em></h3>
+      <div class="projects-grid" style="grid-template-columns:1fr;">
+        <div class="project-card" id="projet-securitis">
+          <span class="project-meta">BTS SIO 2 SISR · Projet en binôme · 2026 · <span class="status-wip">En cours…</span></span>
+          <h3>Conception et sécurisation d'une infrastructure Linux — SECURITIS</h3>
+          <p>Projet en cours de réalisation : <strong class="kw">conception, déploiement et sécurisation d'une infrastructure Linux</strong> entièrement virtualisée pour SECURITIS, une PME de 45 salariés. Architecture <strong class="kw">segmentée en cinq zones</strong> (WAN, LAN, DMZ, DATA, BACKUP) reliées par une passerelle Debian assurant le routage et le filtrage avec <strong class="kw">nftables</strong>. Accès distants sécurisés par <strong class="kw">VPN WireGuard</strong>, détection d'intrusions avec <strong class="kw">Suricata</strong>, protection des accès SSH avec <strong class="kw">Fail2ban</strong>, contrôle d'intégrité avec <strong class="kw">AIDE</strong> et traçabilité avec <strong class="kw">auditd</strong>. Sauvegardes chiffrées et automatisées par <strong class="kw">script Bash et BorgBackup</strong> (mode append-only), puis validation par des <strong class="kw">tests d'intrusion depuis Kali Linux</strong>.</p>
+          <span class="tools-label">Outils utilisés :</span>
+          <div class="tag-row" style="margin-bottom:22px;">
+            <span class="tag">VMware Workstation</span>
+            <span class="tag">Debian</span>
+            <span class="tag">nftables</span>
+            <span class="tag">SSH</span>
+            <span class="tag">WireGuard</span>
+            <span class="tag">Suricata</span>
+            <span class="tag">Fail2ban</span>
+            <span class="tag">AIDE</span>
+            <span class="tag">auditd</span>
+            <span class="tag">BorgBackup</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Kali Linux</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a href="Sujet_projet_SECURITIS.pdf" class="btn btn-primary" target="_blank" rel="noopener">Voir le sujet</a>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="projects-group">
-      <h3 class="group-title">Projets de formation</h3>
-      <div class="projects-grid">
-        <div class="project-card">
+        <div class="project-card" id="projet-bordeaux">
           <span class="project-meta">BTS SIO 2 SISR · Projet de groupe · 2026</span>
           <h3>Infrastructure &amp; sécurité réseau virtuel — TechServices (Perpignan – Bordeaux)</h3>
-          <p>Projet réalisé en binôme : conception, déploiement et sécurisation d'une infrastructure réseau virtualisée pour une entreprise fictive répartie sur deux sites. Mise en place d'un domaine Active Directory (DNS, DHCP, GPO), segmentation réseau par VLAN, pare-feu OPNsense, serveur web NGINX en DMZ, serveur Syslog centralisé et interconnexion des sites via VPN IPsec. Déploiement également d'un accès distant OpenVPN. Le projet a été validé par des tests fonctionnels et des audits de sécurité. Outils utilisés : VMware Workstation, Windows Server 2022, OPNsense, NGINX, rsyslog, Trello et Draw.io. Documentation technique complète rédigée.</p>
+          <p>Projet réalisé en binôme : conception, déploiement et sécurisation d'une infrastructure réseau virtualisée pour une entreprise fictive répartie sur deux sites. Mise en place d'un domaine Active Directory (DNS, DHCP, GPO), <strong class="kw">segmentation réseau par VLAN</strong>, <strong class="kw">pare-feu OPNsense</strong>, <strong class="kw">serveur web NGINX en DMZ</strong>, <strong class="kw">serveur Syslog</strong> centralisé et interconnexion des sites via <strong class="kw">VPN IPsec</strong>. Déploiement également d'un accès distant <strong class="kw">OpenVPN</strong>. Le projet a été validé par des tests fonctionnels et des audits de sécurité.</p>
+          <span class="tools-label">Outils utilisés :</span>
           <div class="tag-row" style="margin-bottom:22px;">
+            <span class="tag">VMware Workstation</span>
+            <span class="tag">Windows Server 2022</span>
+            <span class="tag">OPNsense</span>
             <span class="tag">Trello</span>
             <span class="tag">Draw.io</span>
-            <span class="tag">VMware</span>
-            <span class="tag">OPNsense</span>
-            <span class="tag">Windows Server</span>
-            <span class="tag">Active Directory</span>
-            <span class="tag">Squid</span>
-            <span class="tag">IPsec / OpenVPN</span>
-            <span class="tag">NGINX</span>
-            <span class="tag">Syslog</span>
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:12px;">
             <a href="Compte_rendu_projet_Miriana-Lucca-Cioli.pdf" class="btn btn-primary" target="_blank" rel="noopener">Lire le compte rendu</a>
             <a href="Compte_rendu_projet_Miriana-Lucca-Cioli.pdf" class="btn btn-ghost" download>Télécharger (PDF)</a>
             <a href="Sujet_projet_TechServices.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Voir le sujet</a>
           </div>
+        </div>
+        <div class="project-card" id="projet-ad">
+          <span class="project-meta">BTS SIO 1 SISR · Projet de formation · 2025/2026</span>
+          <h3>Infrastructure Active Directory — TechServices (PME de 50 salariés)</h3>
+          <p>Projet de migration d'une PME de 50 salariés d'un fonctionnement en Workgroup vers <strong class="kw">une infrastructure Active Directory centralisée</strong>, entièrement virtualisée (domaine techservices.local). Mise en place d'un <strong class="kw">contrôleur de domaine (AD DS + DNS)</strong>, organisation de l'annuaire en unités d'organisation avec utilisateurs et groupes de sécurité par service, <strong class="kw">serveur de fichiers</strong> avec partages par service, <strong class="kw">droits NTFS</strong> et quotas, <strong class="kw">intranet IIS</strong> avec authentification Windows intégrée, <strong class="kw">stratégies de groupe</strong> (politique de mot de passe, lecteurs réseau) et filtrage des flux par le <strong class="kw">pare-feu pfSense</strong>. Procédures de tests et de validation définies pour chaque service (connectivité, jonction au domaine, GPO, partages, intranet).</p>
+          <span class="tools-label">Outils utilisés :</span>
+          <div class="tag-row" style="margin-bottom:22px;">
+            <span class="tag">Windows Server 2022</span>
+            <span class="tag">Windows 10/11</span>
+            <span class="tag">pfSense</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a href="Cahier_des_charges_TechServices_AD.pdf" class="btn btn-primary" target="_blank" rel="noopener">Voir le cahier des charges</a>
+            <a href="Cahier_des_charges_TechServices_AD.pdf" class="btn btn-ghost" download>Télécharger (PDF)</a>
+            <a href="Sujet_projet_TechServices_AD.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Voir le sujet</a>
+          </div>
+        </div>
+        <div class="project-card" id="projet-skypool">
+          <span class="project-meta">BTS SIO 1 SISR · Projet en binôme · 2025/2026</span>
+          <h3>Interconnexion réseau inter-sites — SkyPool (Marseille – Paris)</h3>
+          <p>Projet réalisé en binôme : conception, mise en place et documentation de <strong class="kw">l'interconnexion sécurisée</strong> entre le siège de Marseille et un nouveau site à Paris pour SkyPool. <strong class="kw">Tunnel VPN site-à-site IPsec</strong> (IKEv2, AES-256, SHA-256) entre les deux pare-feux pfSense, services <strong class="kw">DHCP et DNS</strong> (domaine skypool.local) centralisés sur les deux serveurs avec <strong class="kw">relais DHCP</strong> sur le pare-feu de Paris, <strong class="kw">serveur web Apache2</strong> hébergeant le site vitrine et accessible depuis Paris à travers le tunnel, et règles de filtrage propres à chaque site. Plan d'adressage (172.16.1.0/24 et 172.16.2.0/24), schéma de topologie et procédures de tests (VPN, DHCP, DNS, accès web) documentés dans un cahier des charges technique.</p>
+          <span class="tools-label">Outils utilisés :</span>
+          <div class="tag-row" style="margin-bottom:22px;">
+            <span class="tag">pfSense</span>
+            <span class="tag">IPsec / IKEv2</span>
+            <span class="tag">DHCP / DHCP Relay</span>
+            <span class="tag">DNS (BIND)</span>
+            <span class="tag">Apache2</span>
+            <span class="tag">Debian / Ubuntu</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a href="Cahier_des_charges_SkyPool.pdf" class="btn btn-primary" target="_blank" rel="noopener">Voir le cahier des charges</a>
+            <a href="Cahier_des_charges_SkyPool.pdf" class="btn btn-ghost" download>Télécharger (PDF)</a>
+            <a href="Sujet_projet_SkyPool.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Voir le sujet</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-group">
+      <h3 class="group-title">Projets <em>personnels</em></h3>
+      <div class="projects-grid">
+        <div class="project-card" id="projet-ha">
+          <span class="project-meta">Projet personnel · <span class="status-wip">En cours…</span></span>
+          <h3>Infrastructure réseau virtualisée haute disponibilité</h3>
+          <p>Projet en cours de réalisation : conception d'une infrastructure réseau complète avec <strong class="kw">pare-feu OPNsense en haute disponibilité (CARP)</strong>, un LAN et une DMZ. Le LAN accueille un <strong class="kw">Active Directory redondant</strong> (DHCP + DNS), les outils de gestion et de supervision <strong class="kw">GLPI</strong>, <strong class="kw">FOG</strong>, <strong class="kw">Zabbix</strong> et le stockage <strong class="kw">TrueNAS</strong>. La DMZ héberge un serveur <strong class="kw">NGINX</strong> et un site <strong class="kw">WordPress</strong>, avec un accès VPN depuis le WAN.</p>
+          <span class="tools-label">Outils utilisés :</span>
+          <div class="tag-row" style="margin-bottom:22px;">
+            <span class="tag">OPNsense</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">GLPI</span>
+            <span class="tag">FOG</span>
+            <span class="tag">Zabbix</span>
+            <span class="tag">TrueNAS</span>
+            <span class="tag">NGINX</span>
+            <span class="tag">WordPress</span>
+          </div>
+          <details class="infra-details">
+            <summary class="btn btn-primary">Voir l'infrastructure réseau</summary>
+            <a href="infrastructure_reseau.png" target="_blank" rel="noopener" title="Ouvrir l'image en grand"><img src="infrastructure_reseau.png" alt="Schéma de l'infrastructure réseau : pare-feu OPNsense master/slave (CARP), LAN avec Active Directory, GLPI, FOG, Zabbix et TrueNAS, DMZ avec NGINX et WordPress" loading="lazy"></a>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-group" id="synthese-e5">
+      <h3 class="group-title">Tableau de <em>synthèse E5</em></h3>
+      <div class="projects-grid" style="grid-template-columns:1fr;">
+        <div class="project-card">
+          <span class="project-meta">BTS SIO SISR · Épreuve E5 · Réalisations professionnelles</span>
+          <h3>Tableau de synthèse des réalisations professionnelles</h3>
+          <p>Ce tableau relie chacune de mes réalisations aux <strong class="kw">compétences du référentiel</strong> mises en œuvre. Clique sur le nom d'une réalisation pour aller directement à sa fiche projet.</p>
+          <details class="infra-details e5-details">
+            <summary class="btn btn-primary">Voir le tableau de synthèse</summary>
+            <div class="table-scroll">
+              <table class="wifi-table e5-table">
+                <thead><tr><th>Réalisations professionnelles</th><th>Gérer le patrimoine informatique</th><th>Répondre aux incidents et aux demandes</th><th>Développer la présence en ligne</th><th>Travailler en mode projet</th><th>Mettre à disposition un service</th><th>Organiser son développement professionnel</th></tr></thead>
+                <tbody>
+<tr class="e5-sep"><th colspan="7">Réalisations en cours de formation</th></tr>
+<tr><th scope="row"><a href="#projet-securitis">Conception et sécurisation d'une infrastructure Linux</a><span class="e5-sub">SECURITIS</span></th><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td></tr>
+<tr><th scope="row"><a href="#projet-bordeaux">Infrastructure &amp; sécurité réseau virtuel</a><span class="e5-sub">TechServices</span></th><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td><td></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td></tr>
+<tr><th scope="row"><a href="#projet-ad">Infrastructure Active Directory</a><span class="e5-sub">TechServices</span></th><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td><td></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td></tr>
+<tr><th scope="row"><a href="#projet-skypool">Interconnexion réseau inter-sites</a><span class="e5-sub">SkyPool</span></th><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td></tr>
+<tr><th scope="row"><a href="#projet-ha">Infrastructure Haute Disponibilité &amp; Supervision Linux</a><span class="e5-sub">CloudTech</span></th><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td></tr>
+<tr class="e5-sep"><th colspan="7">Réalisations en milieu professionnel — première année</th></tr>
+<tr><th scope="row">Calculateur de prix selon la distance</th><td></td><td></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td></tr>
+<tr><th scope="row">Site de suivi des paiements des patients</th><td></td><td></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td></tr>
+<tr><th scope="row">Recueil des besoins auprès du personne</th><td></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td><td></td></tr>
+<tr><th scope="row">Autres activités informatiques et réseau</th><td><span class="e5-x" aria-label="Oui">✔</span></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td><td></td><td><span class="e5-x" aria-label="Oui">✔</span></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="e5-dl"><a href="Tableau_synthese_realisations_professionnelles.ods" class="btn btn-ghost" download>Télécharger le tableau (.ods)</a></p>
+          </details>
         </div>
       </div>
     </div>
